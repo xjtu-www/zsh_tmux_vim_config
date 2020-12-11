@@ -16,13 +16,31 @@
 * 注：以下安装过程均基于Ubuntu 16.04（Windows系统下的安装可直接参考官方链接[oh my zsh github](https://github.com/ohmyzsh/ohmyzsh)，[Install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)）
 * **安装 zsh**
   * 查看正在使用的shell：`echo $SHELL`
+  
+  <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_1.png'></div>
+  
   * 查看所有shell：`cat /etc/shells`
+  
+  <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_2.png'></div>
+  
   * 安装zsh：`sudo apt install zsh`
   * 再次查看所有shell：`cat /etc/shells`
+  
+  <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_3.png'></div>
+  
   * 查看zsh版本：`zsh --version # 版本最好大于5.0`
+  
+  <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_4.png'></div>
+  
   * 将zsh设置为默认shell：`chsh -s $(which zsh)`
   * 仅对当前用户设置（适合在服务器上配置时使用）：先输入`chsh`回车, 再输入新的shell路径：`/usr/bin/zsh`
+  
+  <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_5.png'></div>
+  
   * 重新启动shell（本地需要重启），输入：`echo $SHELL  # 进行验证`
+  
+  <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_6.png'></div>
+  
   * 可能遇到的问题：Ignore insecure directories and continue [y] or abort compinit [n]? 输入y，再参考[issue_1](https://github.com/zsh-users/zsh-completions/issues/433)解决
 * **安装 oh my zsh**
   * 需预先安装：curl或wget，以及git
@@ -33,6 +51,9 @@
     sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
     ```
   * 安装成功后显示：
+  
+  <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_7.png'></div>
+  
 ### oh my zsh使用
 * **配置文件**：完成安装后，会自动在主目录下生成一个隐藏文件~/.zshrc，此即为配置文件，也是最重要的文件。
 * **主题**：oh my zsh提供了海量的主题，具体可参考[themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)。找到自己心仪的主题后，只需在配置文件中将ZSH_THEME="robbyrussell"引号中主题名字替换，保存文件后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可。
@@ -63,6 +84,9 @@
     bindkey '^F' autosuggest-accept
     ```
     * '^F'代表组合键（Ctrl+F），可按自己习惯进行更改。更改后保存文件，重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）。
+    
+    <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_8.png'></div>
+    
     * 部分补全功能：组合键（Alt+F）或（Esc+F），这是自带的，但大部分博客中都没有提及。
     * 完成上述改建操作后，可以很方便地使用（Ctrl+F）进行全补全，（Alt+F）进行部分补全。
 * **zsh-syntax-highlighting（官方主页：[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)）**
