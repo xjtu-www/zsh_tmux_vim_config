@@ -40,6 +40,8 @@
   <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_6.png'></div>
   
   * 可能遇到的问题：Ignore insecure directories and continue [y] or abort compinit [n]? 输入y，再参考[issue_1](https://github.com/zsh-users/zsh-completions/issues/433)解决
+   * **讨论**: Basically, ZSH expects system files to be owned and modifiable (w) by either you (the one running the shell) or root
+   * 因此若是普通用户，需联系具有root权限的用户将`compaudit`命令显示的目录的所有者改为root，即运行`sudo chown -R root:root target_directory`命令。
 * **安装 oh my zsh**
   * 需预先安装：curl或wget，以及git
   * 在命令行中输入以下命令之一：
@@ -48,6 +50,7 @@
     sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
     ```
+  * 若上述命令执行出错，可直接点击网址进行下载（点击网址后在新弹出的网页右键另存为即可下载install.sh文件），在执行`sh install.sh`命令进行安装。
   * 安装成功后显示：
   
   <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_7.png'></div>
@@ -59,7 +62,7 @@
 ### 推荐插件（updating）
 * **extract**
   * 功能：一键解压所有格式文件，x file_name或extract file_name
-  * 只需在配置文件中加入该插件名'extract'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用
+  * 只需在配置文件中加入该插件名'extract'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用。
 * **autojump**
   * 功能：自动跳转，具体用法见[autojump](https://github.com/wting/autojump)
   * 安装：在命令行中依次执行：
@@ -68,14 +71,14 @@
   cd autojump
   ./install.py
   ```
-  * 在配置文件中加入该插件名'autojump'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用
+  * 在配置文件中加入该插件名'autojump'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用。
 * **zsh-autosuggestions（强烈推荐）**
   * 功能：自动补全，具体用法见[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions#usage)
   * 安装：在命令行中执行：
   ```
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   ```
-  * 在配置文件中加入该插件名'zsh-autosuggestions'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用
+  * 在配置文件中加入该插件名'zsh-autosuggestions'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用。
   * **改键**（由于默认的快捷键较为不方便，因此可按自己习惯进行改键）
     * 打开配置文件，找到source $ZSH/oh-my-zsh.sh，在该行下面新增一句：
     ```
@@ -88,12 +91,16 @@
     * 部分补全功能：组合键（Alt+F）或（Esc+F），这是自带的，但大部分博客中都没有提及。
     * 完成上述改建操作后，可以很方便地使用（Ctrl+F）进行全补全，（Alt+F）进行部分补全。
 * **zsh-syntax-highlighting（官方主页：[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)）**
-  * 功能：语法高亮
+  * 功能：语法高亮。
   * 安装：在命令行中执行：
   ```
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   ```
-  * 在配置文件中加入该插件名'zsh-syntax-highlighting'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用
+  * 在配置文件中加入该插件名'zsh-syntax-highlighting'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用。
+* **sudo**
+  * 功能: 连按两次`Esc`即可在当前命令开头加上`sudo`。
+  * 只需在配置文件中加入该插件名'sudo'后重启shell（或直接在命令行中输入`source ~/.zshrc`使配置生效）即可使用。
+  
 ### References
 * [Zsh主页](https://www.zsh.org/)
 * [Oh My Zsh主页](https://ohmyz.sh/)
@@ -107,5 +114,8 @@
 * [issue_1](https://github.com/zsh-users/zsh-completions/issues/433)
 ### 更新
 * 2020-12-09
-  * zsh-autosuggestions插件改键
-  * 新增zsh-syntax-highlighting插件
+  * zsh-autosuggestions插件改键。
+  * 新增zsh-syntax-highlighting插件。
+* 2020-12-14
+  * 增加[issue_1](https://github.com/zsh-users/zsh-completions/issues/433)讨论。
+  * 新增sudo插件。
