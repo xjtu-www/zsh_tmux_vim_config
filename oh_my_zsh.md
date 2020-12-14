@@ -40,8 +40,8 @@
   <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_6.png'></div>
   
   * 可能遇到的问题：Ignore insecure directories and continue [y] or abort compinit [n]? 输入y，再参考[issue_1](https://github.com/zsh-users/zsh-completions/issues/433)解决
-   * **讨论**: Basically, ZSH expects system files to be owned and modifiable (w) by either you (the one running the shell) or root
-   * 因此若是普通用户，需联系具有root权限的用户将`compaudit`命令显示的目录的所有者改为root，即运行`sudo chown -R root:root target_directory`命令。
+    * **讨论**: Basically, ZSH expects system files to be owned and modifiable (w) by either you (the one running the shell) or root
+    * 因此若是普通用户，需联系具有root权限的用户将`compaudit`命令显示的目录的所有者改为root，即运行`sudo chown -R root:root target_directory`命令。
 * **安装 oh my zsh**
   * 需预先安装：curl或wget，以及git
   * 在命令行中输入以下命令之一：
@@ -50,7 +50,7 @@
     sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
     ```
-  * 若上述命令执行出错，可直接点击网址进行下载（点击网址后在新弹出的网页右键另存为即可下载install.sh文件），在执行`sh install.sh`命令进行安装。
+  * 若上述命令执行出错，可直接点击网址进行下载（点击网址后在新弹出的网页右键另存为即可下载install.sh文件），再执行`sh install.sh`命令进行安装。
   * 安装成功后显示：
   
   <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/fig_7.png'></div>
