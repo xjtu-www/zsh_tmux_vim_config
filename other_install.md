@@ -8,7 +8,7 @@
     * 执行: `make`
     * 执行: `sudo make install`
     * 验证是否安装成功: `cmake --version`
-    * 加入系统路径(`.bashrc`或`.zshrc`): `export Path=/Path/to/cmake-3.15.1/bin:$PATH`
+    * 加入系统路径(`.bashrc`或`.zshrc`): `export PATH=/Path/to/cmake-3.15.1/bin:$PATH`
     
 ### spconv(Spatially Sparse Convolution Library)
 * `git clone https://github.com/traveller59/spconv.git --recursive`
