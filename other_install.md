@@ -30,3 +30,17 @@
 * [cmake 主页](https://cmake.org/files)
 * [spconv 主页](https://github.com/traveller59/spconv)
 * [pcdet 主页](https://github.com/open-mmlab/OpenPCDet)
+### Issues
+* **dpkg: error processing package grub-pc, E: Sub-process /usr/bin/dpkg returned an error code (1)**
+  ```
+  cd /var/lib/dpkg
+  sudo mv info info.bak
+  sudo mkdir info
+  sudo dpkg --configure -a
+  sudo apt-get install -f
+  sudo mv info/* info.bak/
+  sudo rm -rf info
+  sudo mv info.bak info
+  ```
+  * `sudo apt remove --purge package_name`
+  * 重新安装
