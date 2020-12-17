@@ -15,7 +15,10 @@
 * `sudo apt-get install libboost-all-dev`
 * Download cmake>=3.13.2
 * `python setup.py bdist_wheel`
-* **fatal error**解决方法: `sudo apt-get install libboost-all-dev`
+* 在服务器上配置时发生的错误：
+  * <div  align="center"><img src='https://github.com/xjtu-www/zsh_tmux_vim_config/blob/main/images/nvcc_error.png'></div>
+  * 解决方法：在CMakeLists.txt文件开头加入一行`set(CMAKE_CUDA_COMPILER /usr/local/cuda-10.0/bin/nvcc)`
+  * 路径应为所需cuda的安装路径。
 * `cd ./dist`
 * `pip install *.whl`
 * [spconv 主页](https://github.com/traveller59/spconv)
