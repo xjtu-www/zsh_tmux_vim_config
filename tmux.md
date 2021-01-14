@@ -33,6 +33,7 @@ cp .tmux/.tmux.conf.local .
   * `<prefix> z`: 将当前窗口最大化（返回原状也是该快捷键）
   * `<prefix> m`: 开启鼠标模式
   * `<prefix> 0-9`: 选择0-9窗口
+  * `<prefix> ，`: 重命名窗口
 ### References
 * [tmux github](https://github.com/tmux/tmux)
 * [tmux install](https://github.com/tmux/tmux/wiki/Installing)
