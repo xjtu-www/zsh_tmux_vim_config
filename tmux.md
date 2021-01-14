@@ -34,6 +34,7 @@ cp .tmux/.tmux.conf.local .
   * `<prefix> m`: 开启鼠标模式
   * `<prefix> 0-9`: 选择0-9窗口
   * `<prefix> ，`: 重命名窗口
+    * 要固定窗口名称，则需在.zshrc中加`DISABLE_AUTO_TITLE=true`
 ### References
 * [tmux github](https://github.com/tmux/tmux)
 * [tmux install](https://github.com/tmux/tmux/wiki/Installing)
